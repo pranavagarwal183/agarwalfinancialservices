@@ -9,6 +9,8 @@ import Tools from './pages/Tools';
 import Resources from './pages/Resources';
 import Contact from './pages/Contact';
 import Navbar from './components/Navbar';
+import TermsOfUse from './pages/TermsOfUse';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
             <Route path="/resources" element={<Resources />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />
+            <Route path="/termsofuse" element={<TermsOfUse/>} />
+            <Route path="/privacypolicy" element={<PrivacyPolicy/>} />
           </Routes>
         </main>
         <Footer />

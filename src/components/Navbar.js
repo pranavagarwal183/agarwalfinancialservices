@@ -7,9 +7,7 @@ export default function Navbar() {
 
   return (
     <nav className="bg-blue-900 text-white font-semibold sticky top-0 z-50 shadow-md">
-      <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-        <h1 className="text-lg sm:text-xl font-bold">Agarwal Financial Services</h1>
-
+      <div className="max-w-7xl mx-auto px-4 py-3 flex justify-center items-center">
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-8 text-sm">
           <li><Link to="/" className="hover:text-yellow-300 transition">HOME</Link></li>
@@ -17,6 +15,8 @@ export default function Navbar() {
           <li><Link to="/services" className="hover:text-yellow-300 transition">WHAT WE OFFER</Link></li>
           <li><Link to="/tools" className="hover:text-yellow-300 transition">CALCULATORS</Link></li>
           <li><Link to="/contact" className="hover:text-yellow-300 transition">CONTACT US</Link></li>
+          <li><Link to="/termsofuse" className="hover:text-yellow-300 transition">TERMS OF USE</Link></li>
+          <li><Link to="/privacypolicy" className="hover:text-yellow-300 transition">PRIVACY POLICY</Link></li>
         </ul>
 
         {/* Mobile Menu Toggle */}
