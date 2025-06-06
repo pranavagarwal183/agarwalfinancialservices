@@ -4,33 +4,6 @@ import { FaWhatsapp } from 'react-icons/fa';
 export default function Home() {
   return (
     <div className="font-sans text-gray-800">
-      {/* Top Banner */}
-      <div className="flex justify-between items-center px-6 py-4 border-b border-gray-200">
-        <img src="/logo.png" alt="Logo" className="h-16" />
-        <div className="text-sm text-right">
-          <p className="text-gray-600">AMFI-Registered Mutual Fund Distributor</p>
-          <div className="mt-2 space-x-2">
-            <button className="bg-blue-900 text-white px-4 py-1 rounded-full hover:bg-blue-700">
-              Portfolio Login
-            </button>
-            <button className="bg-black text-white px-4 py-1 rounded-full hover:bg-gray-800">
-              New User Signup
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Navbar */}
-      <nav className="bg-blue-900 text-white text-sm font-semibold">
-        <ul className="flex justify-center gap-8 py-3">
-          <li className="hover:underline cursor-pointer">HOME</li>
-          <li className="hover:underline cursor-pointer">ABOUT US</li>
-          <li className="hover:underline cursor-pointer">WHAT WE OFFER</li>
-          <li className="hover:underline cursor-pointer">CALCULATORS</li>
-          <li className="hover:underline cursor-pointer">CONTACT US</li>
-        </ul>
-      </nav>
-
       {/* Welcome Section */}
       <div className="flex flex-col md:flex-row justify-between items-center gap-8 px-8 py-12">
         {/* Text */}
@@ -39,7 +12,7 @@ export default function Home() {
             Welcome To Agarwal Financial Services
           </h2>
           <p className="text-gray-700 leading-relaxed">
-            Established in 2020. With 18 years of experience in the financial industry, Agarwal Financial Services has grown into a trusted name in the financial sector, offering tailored solutions that align with the diverse needs of our clients. 
+            Established in 2003. With 22+ years of experience in the financial industry, Agarwal Financial Services has grown into a trusted name in the financial sector, offering tailored solutions that align with the diverse needs of our clients. 
             We specialize in distributing financial products, ensuring every recommendation is suited to each client's unique goals and requirements.
           </p>
         </div>

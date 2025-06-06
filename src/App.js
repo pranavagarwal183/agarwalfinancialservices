@@ -7,12 +7,14 @@ import Services from './pages/Services';
 import Tools from './pages/Tools';
 import Resources from './pages/Resources';
 import Contact from './pages/Contact';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <Router>
       <div className="min-h-screen flex flex-col">
         <Header />
+        <Navbar />
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
