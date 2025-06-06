@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
+import ImageMy from '../assets/1000090699.jpg';
 
 export default function Home() {
   return (
@@ -20,7 +21,7 @@ export default function Home() {
         {/* Image */}
         <div className="md:w-1/2">
           <img
-            src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=800&q=80"
+            src={ImageMy}
             alt="Happy Family"
             className="rounded-lg shadow-lg"
           />
@@ -34,7 +35,7 @@ export default function Home() {
 
       {/* WhatsApp Chat Now Button */}
       <a
-        href="https://wa.me/919999999999"
+        href="https://wa.me/919824448111"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-4 right-4 flex items-center bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full shadow-lg z-50"
