@@ -11,6 +11,7 @@ import Contact from './pages/Contact';
 import Navbar from './components/Navbar';
 import TermsOfUse from './pages/TermsOfUse';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import SIPCalculator from './pages/Calculators/SIPCalculators';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/termsofuse" element={<TermsOfUse/>} />
             <Route path="/privacypolicy" element={<PrivacyPolicy/>} />
+            <Route path="/calculators/sip" element={<SIPCalculator/>} />
           </Routes>
         </main>
         <Footer />

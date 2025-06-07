@@ -8,7 +8,7 @@ export default function Header() {
       className="bg-cover bg-center"
       style={{ backgroundImage:`url(${banner})`}} // Place this in public/
     >
-      <div className="bg-black bg-opacity-60">
+      <div className="bg-black bg-opacity-80">
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-6 py-4 text-white">
           {/* Left: Logo + Text */}
           <div className="flex items-center space-x-4">
