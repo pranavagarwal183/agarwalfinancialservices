@@ -5,17 +5,16 @@ import banner from '../assets/mutual-fund-banner.png';
 export default function Header() {
   return (
     <header
-      className="bg-cover bg-center"
-      style={{ backgroundImage:`url(${banner})`}} // Place this in public/
+      className="bg-cover bg-center" // Placed in public
     >
-      <div className="bg-black bg-opacity-80">
-        <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-6 py-4 text-white">
+      <div className="bg-white bg-opacity-0">
+        <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-6 py-4 text-black">
           {/* Left: Logo + Text */}
           <div className="flex items-center space-x-4">
             <img src={logo} alt="AFS Logo" className="h-16 object-contain" />
             <div>
-              <h1 className="text-xl md:text-2xl font-bold">Agarwal Financial Services</h1>
-              <p className="text-sm text-gray-300">AMFI-Registered Mutual Fund Distributor</p>
+              <h1 className="text-xl md:text-2xl font-bold text-black ">Agarwal Financial Services</h1>
+              <p className="text-sm text-black-300">AMFI-Registered Mutual Fund Distributor</p>
             </div>
           </div>
 

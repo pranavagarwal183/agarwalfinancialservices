@@ -1,13 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Bar } from 'react-chartjs-2';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+} from 'chart.js';
+
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+
+const quotes = [
+  '"The strongest force in the universe is compound interest." – Albert Einstein',
+  '"Start early, invest regularly, and stay invested." – Common SIP Wisdom',
+  '"Compound interest is the eighth wonder of the world. He who understands it, earns it." – Albert Einstein',
+  '"Investing should be more like watching paint dry or watching grass grow. If you want excitement, take $800 and go to Las Vegas." – Paul Samuelson',
+  '"Do not save what is left after spending, but spend what is left after saving." – Warren Buffett'
+];
 
 export default function SIPCalculator() {
   const [name, setName] = useState('');
-  const [sipAmount, setSipAmount] = useState(0);
-  const [years, setYears] = useState(1);
-  const [expectedReturn, setExpectedReturn] = useState(2);
+  const [sipAmount, setSipAmount] = useState(10000);
+  const [years, setYears] = useState(10);
+  const [expectedReturn, setExpectedReturn] = useState(12);
   const [result, setResult] = useState(null);
   const [invested, setInvested] = useState(null);
   const [gain, setGain] = useState(null);
+  const [quote, setQuote] = useState(quotes[0]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const index = Math.floor(Math.random() * quotes.length);
+      setQuote(quotes[index]);
+    }, 8000);
+    return () => clearInterval(interval);
+  }, []);
 
   const calculateSIP = () => {
     const monthlyRate = expectedReturn / 100 / 12;
@@ -36,11 +65,8 @@ export default function SIPCalculator() {
 
       {/* Quotes */}
       <div className="text-center mb-8 max-w-2xl">
-        <p className="italic text-lg text-gray-700">
-          "The strongest force in the universe is compound interest." – Albert Einstein
-        </p>
-        <p className="italic text-lg text-gray-700 mt-2">
-          "Start early, invest regularly, and stay invested." – Common SIP Wisdom
+        <p className="italic text-lg text-gray-700 transition-opacity duration-500 ease-in-out">
+          {quote}
         </p>
       </div>
 
@@ -75,10 +101,16 @@ export default function SIPCalculator() {
             type="range"
             min="1"
             max="30"
+            list="yearMarks"
             value={years}
             onChange={(e) => setYears(Number(e.target.value))}
             className="w-full"
           />
+          <datalist id="yearMarks">
+            {[5, 10, 15, 20, 25, 30].map((val) => (
+              <option key={val} value={val} label={`${val}`} />
+            ))}
+          </datalist>
           <div className="text-right text-green-700 font-semibold">{years} year(s)</div>
         </div>
 
@@ -87,11 +119,17 @@ export default function SIPCalculator() {
           <input
             type="range"
             min="1"
-            max="30"
+            max="15"
+            list="interestMarks"
             value={expectedReturn}
             onChange={(e) => setExpectedReturn(Number(e.target.value))}
             className="w-full"
           />
+          <datalist id="interestMarks">
+            {[5, 7, 10, 12, 15].map((val) => (
+              <option key={val} value={val} label={`${val}%`} />
+            ))}
+          </datalist>
           <div className="text-right text-green-700 font-semibold">{expectedReturn}% per annum</div>
         </div>
 
@@ -127,6 +165,37 @@ export default function SIPCalculator() {
               <span className="font-semibold text-gray-700">Total Gain:</span>{' '}
               ₹{gain.toLocaleString()}
             </div>
+          </div>
+        )}
+
+        {/* Bar Chart */}
+        {result && (
+          <div className="mt-8">
+            <Bar
+              data={{
+                labels: ['Invested', 'Gain', 'Projected Value'],
+                datasets: [
+                  {
+                    label: '₹ Value',
+                    data: [invested, gain, result],
+                    backgroundColor: ['#10B981', '#3B82F6', '#F59E0B'],
+                  },
+                ],
+              }}
+              options={{
+                responsive: true,
+                plugins: {
+                  legend: {
+                    display: false,
+                  },
+                },
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                  },
+                },
+              }}
+            />
           </div>
         )}
       </div>
