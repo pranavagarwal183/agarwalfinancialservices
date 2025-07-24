@@ -61,6 +61,7 @@ export default function Hero() {
               <Button 
                 size="lg" 
                 className="btn-gold text-lg px-8 py-4 group focus-ring"
+                onClick={() => window.location.href = '/contact'}
               >
                 Get Free Consultation
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -69,6 +70,7 @@ export default function Hero() {
                 variant="outline" 
                 size="lg"
                 className="text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-primary focus-ring"
+                onClick={() => window.location.href = '/services'}
               >
                 View Our Services
               </Button>

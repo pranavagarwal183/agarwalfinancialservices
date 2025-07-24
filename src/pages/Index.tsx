@@ -1,8 +1,7 @@
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
-import Services from '@/components/Services';
-import About from '@/components/About';
-import Contact from '@/components/Contact';
+import MarketIndexes from '@/components/MarketIndexes';
+import MutualFundLogos from '@/components/MutualFundLogos';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -11,9 +10,8 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
-        <Services />
-        <About />
-        <Contact />
+        <MarketIndexes />
+        <MutualFundLogos />
       </main>
       <Footer />
     </div>

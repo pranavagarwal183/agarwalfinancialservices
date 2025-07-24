@@ -16,7 +16,7 @@ const services = [
   {
     icon: PiggyBank,
     title: 'Wealth Management',
-    description: 'Comprehensive wealth building strategies tailored to your financial goals and risk tolerance.',
+    description: 'Comprehensive wealth-building strategies tailored to your financial goals and risk tolerance.',
     features: ['Portfolio Management', 'Asset Allocation', 'Risk Assessment', 'Regular Reviews'],
     color: 'text-blue-600 dark:text-blue-400',
   },
@@ -142,6 +142,7 @@ export default function Services() {
               <Button 
                 size="lg"
                 className="btn-gold text-lg px-8 py-4 focus-ring"
+                onClick={() => window.location.href = '/contact'}
               >
                 Book Free Consultation
               </Button>
