@@ -3,10 +3,10 @@ import { ArrowRight, Shield, TrendingUp, Users } from 'lucide-react';
 import heroBg from '@/assets/hero-bg.jpg';
 
 const stats = [
-  { id: 1, name: 'Years of Experience', value: '25+' },
-  { id: 2, name: 'Happy Clients', value: '10,000+' },
-  { id: 3, name: 'Assets Managed', value: '₹500Cr+' },
-  { id: 4, name: 'Success Rate', value: '98%' },
+  { id: 1, name: 'Years of Experience', value: '22+' },
+  { id: 2, name: 'Happy Clients', value: '3,000+' },
+  { id: 3, name: 'Assets Managed', value: '₹200Cr+' },
+  { id: 4, name: 'Mutual Funds', value: '100+' },
 ];
 
 const features = [
@@ -69,7 +69,7 @@ export default function Hero() {
               <Button 
                 variant="outline" 
                 size="lg"
-                className="text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-primary focus-ring"
+                className="text-lg px-8 py-4 border-white text-primary hover:bg-white hover:text-primary focus-ring"
                 onClick={() => window.location.href = '/services'}
               >
                 View Our Services
@@ -105,10 +105,10 @@ export default function Hero() {
                       <feature.icon className="h-6 w-6 text-primary-foreground" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white mb-2">
+                      <h3 className="text-lg font-semibold text-black mb-2">
                         {feature.name}
                       </h3>
-                      <p className="text-white/80">
+                      <p className="text-black/80">
                         {feature.description}
                       </p>
                     </div>

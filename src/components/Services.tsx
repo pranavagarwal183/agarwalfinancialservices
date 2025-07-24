@@ -140,8 +140,9 @@ export default function Services() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
+                variant="outline"
                 size="lg"
-                className="btn-gold text-lg px-8 py-4 focus-ring"
+                className="text-lg px-8 py-4  border-white text-primary hover:bg-black hover:text-white focus-ring "
                 onClick={() => window.location.href = '/contact'}
               >
                 Book Free Consultation
@@ -149,7 +150,7 @@ export default function Services() {
               <Button 
                 variant="outline"
                 size="lg"
-                className="text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-primary focus-ring"
+                className="text-lg px-8 py-4 border-white text-primary hover:bg-black hover:text-white focus-ring"
               >
                 Download Brochure
               </Button>

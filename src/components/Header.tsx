@@ -25,7 +25,7 @@ export default function Header() {
                 <TrendingUp className="h-6 w-6 text-primary-foreground" />
               </div>
               <span className="text-xl font-bold text-foreground">
-                Agarwal Financial
+                Agarwal Financial Services
               </span>
             </a>
           </div>

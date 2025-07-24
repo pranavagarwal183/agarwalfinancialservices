@@ -48,7 +48,8 @@ export default function Footer() {
       <div className="container-custom">
         {/* Main Footer Content */}
         <div className="py-16">
-          <div className="grid lg:grid-cols-5 gap-8">
+          {/* Adjusted grid to lg:grid-cols-6 to fit all columns side-by-side */}
+          <div className="grid lg:grid-cols-6 gap-8">
             {/* Company Info */}
             <div className="lg:col-span-2">
               <div className="flex items-center gap-2 mb-6">
@@ -59,7 +60,7 @@ export default function Footer() {
               </div>
               
               <p className="text-primary-foreground/80 mb-6 leading-relaxed">
-                Transforming financial futures since 1998. We provide comprehensive financial 
+                Transforming financial futures since 2003. We provide comprehensive financial 
                 planning services to help individuals and families achieve their financial goals 
                 with confidence and security.
               </p>
@@ -67,15 +68,15 @@ export default function Footer() {
               <div className="space-y-3 mb-6">
                 <div className="flex items-center gap-3">
                   <Phone className="h-5 w-5 text-gold" />
-                  <span className="text-sm">+91 98765 43210</span>
+                  <span className="text-sm">+91 9824448111,9824448113,9824448116</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail className="h-5 w-5 text-gold" />
-                  <span className="text-sm">info@agarwalfinancial.com</span>
+                  <span className="text-sm">sushilagarwal22@gmail.com</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <MapPin className="h-5 w-5 text-gold" />
-                  <span className="text-sm">123 Business Center, MG Road, Bangalore</span>
+                  <span className="text-sm">318, Pride Sapphire, Opposite Golden Supermarket, Off Amin Marg, Rajkot, Gujarat, India - 360001</span>
                 </div>
               </div>
 
@@ -127,10 +128,10 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Resources & Legal */}
-            <div>
+            {/* Resources (now in its own column) */}
+            <div> {/* This div now exclusively holds Resources */}
               <h3 className="text-lg font-semibold mb-6">Resources</h3>
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-3">
                 {footerLinks.resources.map((link) => (
                   <li key={link}>
                     <a 
@@ -142,7 +143,10 @@ export default function Footer() {
                   </li>
                 ))}
               </ul>
+            </div>
 
+            {/* Legal (now in its own column) */}
+            <div> {/* This div now exclusively holds Legal */}
               <h3 className="text-lg font-semibold mb-6">Legal</h3>
               <ul className="space-y-3">
                 {footerLinks.legal.map((link) => (
@@ -164,13 +168,13 @@ export default function Footer() {
         <div className="border-t border-primary-foreground/20 py-8">
           <div className="flex flex-col lg:flex-row justify-between items-center gap-4">
             <div className="text-sm text-primary-foreground/80">
-              © 2024 Agarwal Financial Services. All rights reserved.
+              © 2025 Agarwal Financial Services. All rights reserved.
             </div>
             
             <div className="flex flex-wrap justify-center lg:justify-end gap-6 text-sm">
-              <span className="text-primary-foreground/60">SEBI Reg. No: INZ000123456</span>
-              <span className="text-primary-foreground/60">IRDA License No: 12345</span>
-              <span className="text-primary-foreground/60">AMFI Reg. No: ARN-98765</span>
+              <span className="text-primary-foreground/60">AMFI Registered Mutual Fund Distributor</span>
+              <span className="text-primary-foreground/60">EUN: E036621</span>
+              <span className="text-primary-foreground/60">AMFI Reg. No: ARN-11312</span>
             </div>
           </div>
           

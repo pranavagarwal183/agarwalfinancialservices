@@ -1,10 +1,10 @@
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Calculator, TrendingUp, PiggyBank, Target } from 'lucide-react';
-import SIPCalculator from '@/components/calculators/SIPCalculator';
-import LumpsumCalculator from '@/components/calculators/LumpsumCalculator';
-import RetirementCalculator from '@/components/calculators/RetirementCalculator';
+import SIPCalculator from '../components/calculators/SIPCalculator';
+import LumpsumCalculator from '../components/calculators/LumpsumCalculator';
+import RetirementCalculator from '../components/calculators/RetirementCalculator';
 
 const CalculatorsPage = () => {
   return (
@@ -23,7 +23,7 @@ const CalculatorsPage = () => {
                 <span className="text-primary"> Calculators</span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                Plan your financial future with our comprehensive suite of calculators. 
+                Plan your financial future with our comprehensive suite of calculators.
                 Get instant insights into your investments, savings, and retirement planning.
               </p>
             </div>
@@ -45,7 +45,7 @@ const CalculatorsPage = () => {
                       <CardTitle className="text-2xl">SIP Calculator</CardTitle>
                     </div>
                     <p className="text-muted-foreground">
-                      Calculate the future value of your Systematic Investment Plan (SIP) 
+                      Calculate the future value of your Systematic Investment Plan (SIP)
                       and see how regular investments can help you build wealth over time.
                     </p>
                   </CardHeader>
@@ -66,7 +66,7 @@ const CalculatorsPage = () => {
                       <CardTitle className="text-2xl">Lumpsum Calculator</CardTitle>
                     </div>
                     <p className="text-muted-foreground">
-                      Calculate returns on your one-time investment and understand 
+                      Calculate returns on your one-time investment and understand
                       how your money can grow with compound interest.
                     </p>
                   </CardHeader>
@@ -87,7 +87,7 @@ const CalculatorsPage = () => {
                       <CardTitle className="text-2xl">Retirement Planning Calculator</CardTitle>
                     </div>
                     <p className="text-muted-foreground">
-                      Plan for a comfortable retirement by calculating how much you need to save 
+                      Plan for a comfortable retirement by calculating how much you need to save
                       and invest to meet your retirement goals.
                     </p>
                   </CardHeader>

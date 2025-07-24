@@ -1,57 +1,26 @@
+import { useState } from 'react'; // We'll need useState for the hover effect
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-import { 
-  Phone, 
-  Mail, 
-  MapPin, 
-  Clock, 
-  Facebook, 
-  Twitter, 
-  Linkedin, 
-  Instagram,
-  Send
+import {
+  Phone,
+  Mail, // Still useful for general form context
+  MapPin, // Still useful for general form context
+  Send,
+  MessageCircle, // A good icon for WhatsApp/chat
 } from 'lucide-react';
+import { cn } from '@/lib/utils'; // Assuming you have this utility for conditional classes
 
-const contactInfo = [
-  {
-    icon: Phone,
-    title: 'Phone',
-    details: '+91 98765 43210',
-    subDetails: '+91 98765 43211',
-  },
-  {
-    icon: Mail,
-    title: 'Email',
-    details: 'info@agarwalfinancial.com',
-    subDetails: 'support@agarwalfinancial.com',
-  },
-  {
-    icon: MapPin,
-    title: 'Office',
-    details: '123 Business Center, MG Road',
-    subDetails: 'Bangalore, Karnataka 560001',
-  },
-  {
-    icon: Clock,
-    title: 'Business Hours',
-    details: 'Mon - Fri: 9:00 AM - 6:00 PM',
-    subDetails: 'Sat: 9:00 AM - 1:00 PM',
-  },
-];
-
-const socialLinks = [
-  { icon: Facebook, href: '#', label: 'Facebook' },
-  { icon: Twitter, href: '#', label: 'Twitter' },
-  { icon: Linkedin, href: '#', label: 'LinkedIn' },
-  { icon: Instagram, href: '#', label: 'Instagram' },
-];
+// No longer importing Sheet components as we're building a custom hover effect
 
 export default function Contact() {
+  const primaryPhoneNumber = '+919824448111';
+  const [isWhatsAppBookmarkExpanded, setIsWhatsAppBookmarkExpanded] = useState(false);
+
   return (
-    <section id="contact" className="section-padding bg-muted/30">
+    <section id="contact" className="section-padding bg-muted/30 relative"> {/* Add relative for fixed positioning */}
       <div className="container-custom">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
@@ -60,77 +29,15 @@ export default function Contact() {
             <span className="text-primary"> Touch</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Ready to take control of your financial future? Contact us today for a free consultation 
+            Ready to take control of your financial future? Contact us today for a free consultation
             and discover how we can help you achieve your financial goals.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
-          {/* Contact Information */}
-          <div className="lg:col-span-1 space-y-6">
-            <div className="animate-slide-in-left">
-              <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
-              <div className="space-y-6">
-                {contactInfo.map((info) => (
-                  <div key={info.title} className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <info.icon className="h-6 w-6 text-primary" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-1">{info.title}</h4>
-                      <p className="text-muted-foreground text-sm">{info.details}</p>
-                      {info.subDetails && (
-                        <p className="text-muted-foreground text-sm">{info.subDetails}</p>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Social Links */}
-            <div className="animate-slide-in-left" style={{ animationDelay: '0.2s' }}>
-              <h4 className="font-semibold mb-4">Follow Us</h4>
-              <div className="flex gap-3">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    className="w-10 h-10 bg-primary/10 hover:bg-primary rounded-lg flex items-center justify-center text-primary hover:text-primary-foreground transition-all duration-200 focus-ring"
-                    aria-label={social.label}
-                  >
-                    <social.icon className="h-5 w-5" />
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            {/* Quick Contact Card */}
-            <Card className="card-professional animate-scale-in" style={{ animationDelay: '0.4s' }}>
-              <CardHeader>
-                <CardTitle className="text-lg">Quick Contact</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-sm text-muted-foreground">
-                  Need immediate assistance? Call us directly or WhatsApp us for quick responses.
-                </p>
-                <div className="flex flex-col gap-2">
-                  <Button className="btn-primary w-full focus-ring">
-                    <Phone className="w-4 h-4 mr-2" />
-                    Call Now
-                  </Button>
-                  <Button variant="outline" className="w-full focus-ring">
-                    <Send className="w-4 h-4 mr-2" />
-                    WhatsApp
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Contact Form */}
-          <div className="lg:col-span-2">
-            <Card className="card-professional animate-slide-in-right">
+        {/* Contact Form - Centered */}
+        <div className="flex justify-center"> {/* Flexbox to center the card */}
+          <div className="w-full lg:w-2/3 xl:w-1/2"> {/* Control max width for centering */}
+            <Card className="card-professional animate-fade-in"> {/* Removed slide-in animation for static center */}
               <CardHeader>
                 <CardTitle className="text-2xl">Send us a Message</CardTitle>
                 <p className="text-muted-foreground">
@@ -142,17 +49,17 @@ export default function Contact() {
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="firstName">First Name</Label>
-                      <Input 
-                        id="firstName" 
-                        placeholder="Enter your first name" 
+                      <Input
+                        id="firstName"
+                        placeholder="Enter your first name"
                         className="focus-ring"
                       />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="lastName">Last Name</Label>
-                      <Input 
-                        id="lastName" 
-                        placeholder="Enter your last name" 
+                      <Input
+                        id="lastName"
+                        placeholder="Enter your last name"
                         className="focus-ring"
                       />
                     </div>
@@ -161,19 +68,19 @@ export default function Contact() {
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="email">Email</Label>
-                      <Input 
-                        id="email" 
-                        type="email" 
-                        placeholder="Enter your email" 
+                      <Input
+                        id="email"
+                        type="email"
+                        placeholder="Enter your email"
                         className="focus-ring"
                       />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="phone">Phone Number</Label>
-                      <Input 
-                        id="phone" 
-                        type="tel" 
-                        placeholder="Enter your phone number" 
+                      <Input
+                        id="phone"
+                        type="tel"
+                        placeholder="Enter your phone number"
                         className="focus-ring"
                       />
                     </div>
@@ -181,8 +88,8 @@ export default function Contact() {
 
                   <div className="space-y-2">
                     <Label htmlFor="service">Service Interest</Label>
-                    <select 
-                      id="service" 
+                    <select
+                      id="service"
                       className="w-full px-3 py-2 border border-input rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
                     >
                       <option value="">Select a service</option>
@@ -198,8 +105,8 @@ export default function Contact() {
 
                   <div className="space-y-2">
                     <Label htmlFor="message">Message</Label>
-                    <Textarea 
-                      id="message" 
+                    <Textarea
+                      id="message"
                       placeholder="Tell us about your financial goals and how we can help you..."
                       rows={5}
                       className="focus-ring"
@@ -207,9 +114,9 @@ export default function Contact() {
                   </div>
 
                   <div className="flex items-center gap-2">
-                    <input 
-                      type="checkbox" 
-                      id="newsletter" 
+                    <input
+                      type="checkbox"
+                      id="newsletter"
                       className="rounded border-input focus:ring-2 focus:ring-ring focus:ring-offset-2"
                     />
                     <Label htmlFor="newsletter" className="text-sm text-muted-foreground">
@@ -217,9 +124,9 @@ export default function Contact() {
                     </Label>
                   </div>
 
-                  <Button 
-                    type="submit" 
-                    size="lg" 
+                  <Button
+                    type="submit"
+                    size="lg"
                     className="w-full btn-primary text-lg py-4 focus-ring"
                   >
                     Send Message
@@ -234,18 +141,46 @@ export default function Contact() {
         {/* Map Section */}
         <div className="mt-16 animate-fade-in">
           <Card className="card-professional overflow-hidden">
-            <div className="h-80 bg-muted flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                <h3 className="text-lg font-semibold mb-2">Visit Our Office</h3>
-                <p className="text-muted-foreground">
-                  123 Business Center, MG Road<br />
-                  Bangalore, Karnataka 560001
-                </p>
-              </div>
-            </div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.7582236353916!2d70.77196637508051!3d22.290076280351234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959c902d12f4625%3A0x6a2c27b14d2a13b0!2sPride%20Sapphire!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" // Placeholder, replace with actual embed
+              width="100%"
+              height="320"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Agarwal Financial Services Office Location"
+            ></iframe>
           </Card>
         </div>
+      </div>
+
+      {/* WhatsApp Floating Bookmark */}
+      <div
+        className={cn(
+          "fixed right-0 top-1/2 -translate-y-1/2 bg-green-600 text-white rounded-l-lg shadow-lg z-50 flex items-center p-2 cursor-pointer transition-all duration-300 ease-in-out",
+          isWhatsAppBookmarkExpanded ? 'w-48 pr-4' : 'w-12', // Expanded width and padding
+        )}
+        onMouseEnter={() => setIsWhatsAppBookmarkExpanded(true)}
+        onMouseLeave={() => setIsWhatsAppBookmarkExpanded(false)}
+      >
+        <a
+          href={`https://wa.me/${primaryPhoneNumber.replace(/\+/g, '').replace(/\s/g, '')}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center h-full w-full"
+          aria-label="Chat on WhatsApp"
+        >
+          <MessageCircle className="h-8 w-8 flex-shrink-0" />
+          <span
+            className={cn(
+              "ml-2 text-lg font-semibold whitespace-nowrap overflow-hidden transition-opacity duration-300 ease-in-out",
+              isWhatsAppBookmarkExpanded ? 'opacity-100 max-w-full' : 'opacity-0 max-w-0', // Show/hide text
+            )}
+          >
+            WhatsApp Us
+          </span>
+        </a>
       </div>
     </section>
   );
