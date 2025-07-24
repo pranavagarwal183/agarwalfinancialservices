@@ -1,6 +1,4 @@
-Welcome to Your Project
-Project Information
-This section provides essential details about your project.
+Welcome
 
 How to Edit This Code
 There are several ways to edit your application:
