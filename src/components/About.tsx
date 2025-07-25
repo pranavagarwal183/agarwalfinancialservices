@@ -15,23 +15,23 @@ import {
 const achievements = [
   {
     icon: Award,
-    title: '25+ Years Experience',
-    description: 'Trusted financial expertise since 1998',
+    title: '22+ Years Experience',
+    description: 'Trusted financial expertise since 2003',
   },
   {
     icon: Users,
-    title: '10,000+ Happy Clients',
+    title: '3,000+ Happy Clients',
     description: 'Serving families across India',
   },
   {
     icon: TrendingUp,
-    title: '₹500+ Crores Managed',
+    title: '₹200+ Crores Managed',
     description: 'Assets under management',
   },
   {
     icon: Shield,
-    title: '98% Success Rate',
-    description: 'Client satisfaction guarantee',
+    title: '100+ Different Funds',
+    description: 'Mutual Fund AMCS',
   },
 ];
 
@@ -94,17 +94,17 @@ export default function About() {
             <h3 className="text-3xl font-bold mb-6">Our Story</h3>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                Founded in 1998 by Mr. Suresh Agarwal, Agarwal Financial Services began with a simple 
+                Founded in 2003 by Mr. Sushil Agarwal, Agarwal Financial Services began with a simple 
                 mission: to make quality financial planning accessible to every Indian family.
               </p>
               <p>
                 What started as a small advisory firm has grown into one of India's most trusted 
                 financial service providers, managing over ₹500 crores in client assets and serving 
-                more than 10,000 satisfied clients across the country.
+                more than 3,000 satisfied clients across the country.
               </p>
               <p>
                 Our success is built on three pillars: trust, transparency, and proven results. 
-                We believe that financial planning is not just about investments – it's about 
+                We believe that financial planning is not just about investments, it's about 
                 understanding your dreams and creating a roadmap to achieve them.
               </p>
             </div>
