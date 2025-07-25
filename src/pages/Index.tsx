@@ -3,6 +3,7 @@ import Hero from '@/components/Hero';
 import MarketIndexes from '@/components/MarketIndexes';
 import MutualFundLogos from '@/components/MutualFundLogos';
 import Footer from '@/components/Footer';
+import LogoCloud from '@/components/LogoCloud';
 
 const Index = () => {
   return (
@@ -11,7 +12,7 @@ const Index = () => {
       <main>
         <Hero />
         <MarketIndexes />
-        <MutualFundLogos />
+        <LogoCloud />
       </main>
       <Footer />
     </div>
