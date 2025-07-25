@@ -1,4 +1,5 @@
 import { TrendingUp, Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const footerLinks = {
   services: [
@@ -100,12 +101,16 @@ export default function Footer() {
               <ul className="space-y-3">
                 {footerLinks.services.map((link) => (
                   <li key={link}>
-                    <a 
-                      href="#" 
+                    <Link 
+                      to={
+                        link === 'Wealth Management' ? '/services/wealth-management' :
+                        link === 'Investment Planning' ? '/services/investment-planning' :
+                        '/services'
+                      }
                       className="text-sm text-primary-foreground/80 hover:text-primary-foreground hover:underline transition-colors duration-200"
                     >
                       {link}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -117,12 +122,18 @@ export default function Footer() {
               <ul className="space-y-3">
                 {footerLinks.company.map((link) => (
                   <li key={link}>
-                    <a 
-                      href="#" 
+                    <Link 
+                      to={
+                        link === 'About Us' ? '/about' :
+                        link === 'Our Team' ? '/team' :
+                        link === 'Careers' ? '/careers' :
+                        link === 'Contact Us' ? '/contact' :
+                        '/about'
+                      }
                       className="text-sm text-primary-foreground/80 hover:text-primary-foreground hover:underline transition-colors duration-200"
                     >
                       {link}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -134,12 +145,18 @@ export default function Footer() {
               <ul className="space-y-3">
                 {footerLinks.resources.map((link) => (
                   <li key={link}>
-                    <a 
-                      href="#" 
+                    <Link 
+                      to={
+                        link === 'Financial Calculator' ? '/calculators' :
+                        link === 'Investment Guide' ? '/resources/investment-guide' :
+                        link === 'Market Insights' ? '/resources/market-insights' :
+                        link === 'FAQ' ? '/resources/faq' :
+                        '/resources'
+                      }
                       className="text-sm text-primary-foreground/80 hover:text-primary-foreground hover:underline transition-colors duration-200"
                     >
                       {link}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -151,12 +168,17 @@ export default function Footer() {
               <ul className="space-y-3">
                 {footerLinks.legal.map((link) => (
                   <li key={link}>
-                    <a 
-                      href="#" 
+                    <Link 
+                      to={
+                        link === 'Privacy Policy' ? '/legal/privacy-policy' :
+                        link === 'Terms of Service' ? '/legal/terms-of-service' :
+                        link === 'Disclaimer' ? '/legal/disclaimer' :
+                        '/legal'
+                      }
                       className="text-sm text-primary-foreground/80 hover:text-primary-foreground hover:underline transition-colors duration-200"
                     >
                       {link}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
