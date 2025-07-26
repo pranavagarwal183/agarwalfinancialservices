@@ -5,7 +5,7 @@ import { ArrowUpRight, ArrowDownRight } from 'lucide-react';
 // Expanded the list to include more major market indices
 const stocks = [
   'NIFTY',
-  'SENSEX',
+  'BSE SENSEX',
   'BANKNIFTY',
   'NIFTY FINANCIAL SERVICES',
   'NIFTY MIDCAP 100'
